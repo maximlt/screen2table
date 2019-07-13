@@ -51,7 +51,7 @@ While generating the output for the cross-section mode is straightforward, ***so
 **screen2table** targets ***Windows only*** (the clipboard is OS specific) and is developed based on ***Python 3.7***. The package can be *pip* installed via Github as follows:
 
 ```
-pip install https://github.com/maximlt/screen2table/master
+pip install https://github.com/maximlt/screen2table/tarball/master
 ```
 It can then be launched from the command line since an entry point in created during the install.
 
