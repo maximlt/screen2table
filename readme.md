@@ -59,19 +59,25 @@ To go a little further, there are tools that can turn a package into a binary fi
 ```
 pyinstaller --onefile --windowed screen2table/screen2table.py 
 ```
-The above line will create a *dist* folder containing a single executable file, *screen2table.exe*, which includes Python, the app and its dependencies.
+The above line will create a *dist* folder containing a single executable file, *screen2table.exe*, which includes *Python*, the app and its dependencies.
+
+# Configuration
+
+A few of the internal parameters can be tweaked a little, they can be found in *configs.py*.
 
 # Dependencies
 
-**screen2table** relies on the following Python packages:
+**screen2table** relies on the following *Python* packages:
 - [pynput](https://pynput.readthedocs.io/en/latest/) to record the pixel coordinates of the clicks
 - [Numpy](https://www.numpy.org/) to derive the metrics and the level-width curve
 - [Matplotlib](https://matplotlib.org/) to plot the results obviously, but also to support processing complex polygons
 - [pywin32](https://github.com/mhammond/pywin32) to copy the output table to clipboard
 
-# Coding note
+The GUI is developed on *tkinter*, that is part of the standard library.
 
-**screen2table** was also a learning project, hence the non-pythonic pieces of code and some poor design decisions.
+# History
+
+**screen2table** was also a learning project, hence some non-pythonic pieces of code and a number of poor design decisions.
 
 # License
 
