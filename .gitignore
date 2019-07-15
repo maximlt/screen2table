@@ -1,0 +1,7 @@
+.vscode
+*.pyc
+workdspace.code-workspace
+.pytest_cache
+dist
+build
+screen2table.spec
