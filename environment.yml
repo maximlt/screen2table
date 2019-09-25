@@ -1,4 +1,4 @@
-name: p37_s2t_dev
+name: screen2table
 channels:
   - conda-forge
   - defaults
