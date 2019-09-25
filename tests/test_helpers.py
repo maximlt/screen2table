@@ -537,7 +537,7 @@ def test_calc_area():
 
 
 def test_to_clipboard_for_excel():
-    import win32clipboard
+    from win32 import win32clipboard
     data = np.array([[0, 0], [1, 1]])
     helpers.to_clipboard_for_excel(data, decimals=1)
     win32clipboard.OpenClipboard()
