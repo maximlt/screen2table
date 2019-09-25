@@ -10,6 +10,8 @@ author: Maxime Liquet
 """
 import webbrowser
 import tkinter as tk
+import configparser
+import pathlib
 
 # Adapted from https://pynput.readthedocs.io/en/latest/mouse.html#monitoring-the-mouse  # noqa
 import pynput
@@ -18,13 +20,15 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib.figure import Figure
 
 from screen2table import helpers
-from screen2table.configs import (
-    PLOT_FONTSIZE,
-    RECORD_BUTTON,
-    STOP_BUTTON,
-    DIGITS_DISPLAYED_SUMMARY,
-    DIGITS_CLIPBOARD
-)
+
+# Initiliaze some data from the configs.ini file.
+configs = configparser.ConfigParser()
+configs.read(pathlib.Path(__file__).parent / "configs.cfg")
+PLOT_FONTSIZE = configs.getint("DISPLAY", "PLOT_FONTSIZE")
+DIGITS_DISPLAYED_SUMMARY = configs.getint("DISPLAY", "DIGITS_DISPLAYED_SUMMARY")
+RECORD_BUTTON = configs["CONTROL"]["RECORD_BUTTON"]
+STOP_BUTTON = configs["CONTROL"]["STOP_BUTTON"]
+DIGITS_CLIPBOARD = configs.getint("OUTPUT", "DIGITS_CLIPBOARD")
 
 
 # Inspired from https://stackoverflow.com/questions/31440167/placing-plot-on-tkinter-main-window-in-python  # noqa

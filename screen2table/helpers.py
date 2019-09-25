@@ -12,12 +12,17 @@ create a level-width table.
 from collections import namedtuple
 import math
 import itertools
+import configparser
+import pathlib
 import numpy as np
 import matplotlib.path
 from win32 import win32clipboard
 
-from screen2table.configs import CLOSE_PTS_THRESHOLD
 
+# Initiliaze some data from the configs.ini file.
+configs = configparser.ConfigParser()
+configs.read(pathlib.Path(__file__).parent / "configs.cfg")
+CLOSE_PTS_THRESHOLD = configs.getfloat("COMPUTATION", "CLOSE_PTS_THRESHOLD")
 
 class ScreenData:
     """
