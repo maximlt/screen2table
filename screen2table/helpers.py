@@ -14,7 +14,7 @@ import math
 import itertools
 import numpy as np
 import matplotlib.path
-import win32clipboard
+from win32 import win32clipboard
 
 from screen2table.configs import CLOSE_PTS_THRESHOLD
 
