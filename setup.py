@@ -29,7 +29,11 @@ setup(
         "Topic :: Scientific/Engineering :: Hydrology",
     ],
     packages=['screen2table'],
-    install_requires=["matplotlib", "pywin32", "pynput"],
+    install_requires=[
+        "matplotlib==3.1.0",
+        "pywin32==224",
+        "pynput==1.4.2"
+    ],
     entry_points={
         "console_scripts": [
             "screen2table=screen2table.screen2table:main",
