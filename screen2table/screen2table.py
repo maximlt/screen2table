@@ -8,10 +8,14 @@ This module contains the GUI app (based on tkinter).
 
 author: Maxime Liquet
 """
+
+__version__ = "0.3.0"
+
 import webbrowser
 import tkinter as tk
 import configparser
 import pathlib
+import sys
 
 # Adapted from https://pynput.readthedocs.io/en/latest/mouse.html#monitoring-the-mouse  # noqa
 import pynput
@@ -21,11 +25,22 @@ from matplotlib.figure import Figure
 
 from screen2table import helpers
 
+
 # Initiliaze some data from the configs.ini file.
 configs = configparser.ConfigParser()
-configs.read(pathlib.Path(__file__).parent / "configs.cfg")
+
+try:
+    # --onefile option with Pyinstaller and
+    # --add-data "screen2table/configs.cfg;screen2table"
+    config_file = pathlib.Path(sys._MEIPASS) / "screen2table" / "configs.cfg"
+except AttributeError:
+    config_file = pathlib.Path(__file__).parent / "configs.cfg"
+
+configs.read(config_file)
 PLOT_FONTSIZE = configs.getint("DISPLAY", "PLOT_FONTSIZE")
-DIGITS_DISPLAYED_SUMMARY = configs.getint("DISPLAY", "DIGITS_DISPLAYED_SUMMARY")
+DIGITS_DISPLAYED_SUMMARY = configs.getint(
+    "DISPLAY", "DIGITS_DISPLAYED_SUMMARY"
+)
 RECORD_BUTTON = configs["CONTROL"]["RECORD_BUTTON"]
 STOP_BUTTON = configs["CONTROL"]["STOP_BUTTON"]
 DIGITS_CLIPBOARD = configs.getint("OUTPUT", "DIGITS_CLIPBOARD")
@@ -36,7 +51,7 @@ class App:
 
     def __init__(self, master):
         self.master = master
-        self.master.title("screen2table")
+        self.master.title("screen2table " + __version__)
         # From https://stackoverflow.com/questions/3295270/overriding-tkinter-x-button-control-the-button-that-close-the-window  # noqa
         self.master.protocol("WM_DELETE_WINDOW", self.toquit)
         # Used to keep the window always on top, useful when clicking

@@ -14,6 +14,7 @@ import math
 import itertools
 import configparser
 import pathlib
+import sys
 import numpy as np
 import matplotlib.path
 from win32 import win32clipboard
@@ -21,8 +22,17 @@ from win32 import win32clipboard
 
 # Initiliaze some data from the configs.ini file.
 configs = configparser.ConfigParser()
-configs.read(pathlib.Path(__file__).parent / "configs.cfg")
+
+try:
+    # --onefile option with Pyinstaller and
+    # --add-data "screen2table/configs.cfg;screen2table"
+    config_file = pathlib.Path(sys._MEIPASS) / "screen2table" / "configs.cfg"
+except AttributeError:
+    config_file = pathlib.Path(__file__).parent / "configs.cfg"
+
+configs.read(config_file)
 CLOSE_PTS_THRESHOLD = configs.getfloat("COMPUTATION", "CLOSE_PTS_THRESHOLD")
+
 
 class ScreenData:
     """
