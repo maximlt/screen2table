@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="screen2table",
-    version="0.2.0",
+    version="0.3.0",
     description=(
         "A Windows GUI app to generate geometric data table"
         " by tracing shapes displayed on the screen."
@@ -29,10 +29,12 @@ setup(
         "Topic :: Scientific/Engineering :: Hydrology",
     ],
     packages=['screen2table'],
+    package_data={'screen2table': ['configs.cfg']},
     install_requires=[
-        "matplotlib==3.1.0",
+        "matplotlib==3.1.1",
+        "numpy==1.15.4",
         "pywin32==224",
-        "pynput==1.4.2"
+        "pynput==1.4.4"
     ],
     entry_points={
         "console_scripts": [
