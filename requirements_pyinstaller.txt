@@ -1,0 +1,16 @@
+altgraph==0.16.1
+certifi==2019.9.11
+cycler==0.10.0
+future==0.17.1
+kiwisolver==1.1.0
+matplotlib==3.1.1
+numpy==1.15.4
+pefile==2019.4.18
+PyInstaller==3.5
+pynput==1.4.4
+pyparsing==2.4.2
+python-dateutil==2.8.0
+pywin32==224
+pywin32-ctypes==0.2.0
+six==1.12.0
+wincertstore==0.2
