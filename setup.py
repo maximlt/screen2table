@@ -17,7 +17,7 @@ setup(
     ),
     long_description=README,
     long_description_content_type="text/markdown",
-    url="https://github.com/maximlqt/screen2table",
+    url="https://github.com/maximlt/screen2table",
     author="Maxime Liquet",
     author_email="maximeliquet@free.fr",
     license="MIT",
