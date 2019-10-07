@@ -1,7 +1,13 @@
 .vscode
 *.pyc
-workdspace.code-workspace
-.pytest_cache
+*.pyo
 dist
 build
 screen2table.spec
+*.egg-info/
+
+# Unit test / coverage reports
+.tox/
+.pytest_cache/
+
+upx*/
