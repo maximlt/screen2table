@@ -2,7 +2,7 @@
 
 **screen2table** is a simple Windows GUI program that facilitates adding culvert and cross-section data in a hydraulic model when the original data is not in a file format that can be easily processed (image, PDF, CAD).
 
-<p align="center"><img src="./doc/culvert_anim.gif" alt="Tracing a culvert" width="600"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/maximlt/screen2table/master/doc/culvert_anim.gif" alt="Tracing a culvert" width="600"/></p>
 
 The program allows the user to trace a shape on the screen and to define its dimensions. The traced shape is processed to either generate a Distance-Level table for a cross-section or Level-Width table for a culvert.
 
@@ -18,7 +18,7 @@ Modern softwares provide modellers with methods allowing to import geometric dat
 
 ## Quick user guide
 
-<p align="center"><img src="./doc/mode.png" alt="Mode" width="400"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/maximlt/screen2table/master/doc/mode.png" alt="Mode" width="300"/></p>
 
 First, the user should select between the *culvert* or *cross-section* mode, which have the following outputs:
 
@@ -34,11 +34,11 @@ First, the user should select between the *culvert* or *cross-section* mode, whi
 The user is then required to perform the two following steps:
 1. *Tracing*: The drawing from which the geometry should be copied is traced by ***left-clicking*** on its outline. Tracing is stopped with a ***right-click*** anywhere on the screen (that ***does not add*** a new point). The more zoomed in the drawing on the screen, the closer to the outline the clicks, and the higher the number of points, the more accurate the geometry. Because the program records screen coordinates only, ***the drawing should not be modified (panned, zoomed in/out) on the screen while tracing it.*** The traced geometry is displayed in the program for visual inspection after the right-click, new entry boxes are now available for the following step.
 
-<p align="center"><img src="./doc/tracing.png" alt="Tracing" width="600"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/maximlt/screen2table/master/doc/tracing.png" alt="Tracing" width="600"/></p>
 
 2. *Scaling and processing*: The user provides the geometry extent of the drawing (its bounding box in meter) which is used by the program to scale the recorded geometry to its real dimension and process it further. Optionnaly, an angle in degree can be provided to skew the geometry before processing it. This is for instance useful to horizontally flip a line (angle of 180°).
 
-<p align="center"><img src="./doc/scaling.png" alt="Scaling" width="400"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/maximlt/screen2table/master/doc/scaling.png" alt="Scaling" width="300"/></p>
 
 ## Technical note
 
@@ -48,7 +48,7 @@ While generating the output for the cross-section mode is straightforward, ***so
 3. The width is calculated at each of those clicked/derived levels (there is no regular vertical discretization), be the polygon concave or convex (it cannot be self-intersecting though).
 4. Rows in the level-width table that are almost identical, defined as an absolute change in both width and level less than 0.1 mm, are considered as duplicates. Only the first one is preserved (why? because *Mike Hydro* was not very happy with too close points in the resulting level-width table).
 
-<p align="center"><img src="./doc/complex_culvert.png" alt="Complex culvert" width="600"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/maximlt/screen2table/master/doc/complex_culvert.png" alt="Complex culvert" width="600"/></p>
 
 # Install
 
@@ -64,7 +64,7 @@ The package is available on *pip*:
 ```
 pip install screen2table
 ```
-It can then be launched from the command line since an entry point in created during the install.
+It can then be launched from the command line since an entry point `screen2table` in created during the install.
 
 ## Build from source
 
