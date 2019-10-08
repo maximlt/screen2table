@@ -70,7 +70,7 @@ It can then be launched from the command line since an entry point `screen2table
 
 The executable file was created thanks to *PyInstaller*. Building it again can be achieved by cloning this repo, installing the dependencies found in *requirements_pyinstaller.txt* and running the following command from the root directory:
 ```
-pyinstaller -y --clean --onefile --windowed --add-data "screen2table/configs.cfg;screen2table" --version-file pyinstaller/file_version_info.txt screen2table\screen2table.py
+pyinstaller --distpath .\dist_pyinstaller -y --clean --onefile --windowed --add-data "screen2table/configs.cfg;screen2table" --version-file pyinstaller/file_version_info.txt screen2table\screen2table.py
 ```
 The above line will create a *dist* folder containing a single executable file, *screen2table.exe*, which includes *Python*, the program and its dependencies.
 

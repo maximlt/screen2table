@@ -40,5 +40,5 @@ pyinstaller --onefile --windowed --add-data "screen2table/configs.cfg;screen2tab
 
 So the final one should be:
 ```
-pyinstaller -y --clean --onefile --windowed --add-data "screen2table/configs.cfg;screen2table" --version-file pyinstaller/file_version_info.txt screen2table\screen2table.py
+pyinstaller --distpath .\dist_pyinstaller -y --clean --onefile --windowed --add-data "screen2table/configs.cfg;screen2table" --version-file pyinstaller/file_version_info.txt screen2table\screen2table.py
 ```
