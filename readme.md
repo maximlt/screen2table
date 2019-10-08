@@ -56,7 +56,7 @@ While generating the output for the cross-section mode is straightforward, ***so
 
 ## Executable
 
-An executable file can be downloaded [here](TODO). Just run the executable to launch the program.
+An executable file can be downloaded [here](https://github.com/maximlt/screen2table/releases/tag/0.3.0). Just run the executable to launch the program.
 
 ## From source
 
@@ -66,7 +66,7 @@ pip install screen2table
 ```
 It can then be launched from the command line since an entry point `screen2table` in created during the install.
 
-## Build from source
+## Build an executable from source
 
 The executable file was created thanks to *PyInstaller*. Building it again can be achieved by cloning this repo, installing the dependencies found in *requirements_pyinstaller.txt* and running the following command from the root directory:
 ```
