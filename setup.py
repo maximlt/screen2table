@@ -30,6 +30,7 @@ setup(
     ],
     packages=['screen2table'],
     package_data={'screen2table': ['configs.cfg']},
+    python_requires='~=3.7',
     install_requires=[
         "matplotlib==3.1.1",
         "numpy==1.15.4",
