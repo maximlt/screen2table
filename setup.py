@@ -10,7 +10,7 @@ README = (HERE / "README.md").read_text()
 # This call to setup() does all the work
 setup(
     name="screen2table",
-    version="0.3.0",
+    version="0.3.0.post1",
     description=(
         "A Windows GUI app to generate geometric data table"
         " by tracing shapes displayed on the screen."
